@@ -26,6 +26,7 @@ def stop_alarm_input():
 def set_alarm(alarm_time):
     # Funkcja ustawiająca alarm na określony czas
     global stop_alarm  # Używa globalnej flagi stop_alarm
+    alarm_time = datetime.datetime.strptime(alarm_time, "%H:%M:%S").strftime("%H:%M:%S")  # Formatuje alarm_time do postaci z wiodącymi zerami
     print(f"Alarm set for {alarm_time}.")  # Wyświetla komunikat o ustawieniu alarmu
     is_running = True  # Flaga kontrolująca działanie pętli alarmu
     while is_running:  # Pętla sprawdzająca czas
